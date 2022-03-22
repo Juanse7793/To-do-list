@@ -3,9 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webpack Exercise</title>
+    <script src="https://kit.fontawesome.com/a8f9cb7e6f.js" crossorigin="anonymous"></script>
+    <title>To-Do List by Juan</title>
 <script defer src="main.js"></script></head>
 <body>
-    <h1>Hello webpack! this is Juan</h1>
+    <main>
+        <div class="container" id="container">
+            <ul class="header">
+                <li class="title">
+                    <p class="p-title">Juan's List</p>
+                    <i id="reload" class="fa-solid fa-arrows-rotate"></i>
+                </li>
+                <li class="add">
+                    <input class="input-text" type="text" placeholder="Add to your list...">
+                    <i id="enter" class="fa-solid fa-reply"></i>
+                </li>
+            </ul>
+            <ul id="object" class="object-container">
+            </ul>
+            <button id="clear-btn" class="clear">Clear All Completed</button>
+        </div>
+    </main>
 </body>
 </html>
