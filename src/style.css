@@ -91,3 +91,8 @@ body {
   height: 50px;
   border: none;
 }
+
+.trash {
+  background-color: white;
+  border: none;
+}
