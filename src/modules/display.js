@@ -11,7 +11,7 @@ if (localStorage.todo) {
 
 const display = () => {
   notDuplicate();
-  todos.array.forEach((object) => {
+  todos.array.forEach((object, index) => {
     const list = document.createElement('section');
     const div2 = document.createElement('div');
     const task = document.createElement('label');
@@ -27,6 +27,7 @@ const display = () => {
     task.classList.add('task');
     check.classList.add('check');
     check.type = 'checkbox';
+
     div2.appendChild(check);
     div2.appendChild(task);
     list.appendChild(div2);
@@ -36,20 +37,16 @@ const display = () => {
       objectContainer.removeChild(list);
       return todos.removeTodos(object.checkbox, object.description, object.index);
     });
+    task.addEventListener('keydown', (event) => {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+      }
+    });
+    task.addEventListener('input', () => {
+      todos.editText(index, task.innerHTML);
+    });
   });
 };
-
-// for (let k = 0; k < todos.array.length; k += 1) {
-//   const des = document.querySelectorAll('.task');
-//   des[k].addEventListener('keydown', (event) => {
-//     if (event.keyCode === 13) {
-//       event.preventDefault();
-//     }
-//   });
-//   des[k].addEventListener('input', () => {
-//     todos.editText(k, des[k].innerHTML);
-//   });
-// }
 
 const element = document.getElementById('entrada');
 
