@@ -27,7 +27,9 @@ const display = () => {
     task.classList.add('task');
     check.classList.add('check');
     check.type = 'checkbox';
-
+    if (object.checkbox) {
+      check.checked = true;
+    }
     div2.appendChild(check);
     div2.appendChild(task);
     list.appendChild(div2);
@@ -45,6 +47,13 @@ const display = () => {
     task.addEventListener('input', () => {
       todos.editText(index, task.innerHTML);
     });
+    check.addEventListener('change', (e) => {
+      if (e.target.checked) {
+        todos.checked(index, true);
+      } else {
+        todos.checked(index, false);
+      }
+    });
   });
 };
 
@@ -58,6 +67,13 @@ element.addEventListener('keypress', (e) => {
       element.value = '';
     }
   }
+});
+
+const btn = document.getElementById('clear-btn');
+
+btn.addEventListener('click', () => {
+  todos.clean();
+  display();
 });
 
 export default display;
