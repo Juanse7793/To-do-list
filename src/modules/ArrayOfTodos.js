@@ -27,4 +27,9 @@ export default class ArrayOfTodos {
     }
     this.lStorage();
   }
+
+  editText = (index, content) => {
+    this.array[index].description = content;
+    this.lStorage();
+  }
 }

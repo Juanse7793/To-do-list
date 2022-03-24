@@ -80,9 +80,12 @@ body {
 
 .task {
   padding-left: 5px;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 300;
   font-family: 'Open Sans', 'Lucida Grande', tahoma, verdana, arial, sans-serif;
+  width: 250px;
+  text-align: left;
+  outline: none;
 }
 
 .clear {

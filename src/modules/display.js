@@ -14,7 +14,7 @@ const display = () => {
   todos.array.forEach((object) => {
     const list = document.createElement('section');
     const div2 = document.createElement('div');
-    const task = document.createElement('p');
+    const task = document.createElement('label');
     const check = document.createElement('input');
     const menu = document.createElement('button');
     div2.classList.add('div2');
@@ -22,6 +22,7 @@ const display = () => {
     menu.classList.add('fa-solid');
     menu.classList.add('fa-trash-can');
     list.classList.add('object-li');
+    task.setAttribute('contenteditable', 'true');
     task.innerHTML = object.description;
     task.classList.add('task');
     check.classList.add('check');
@@ -37,6 +38,18 @@ const display = () => {
     });
   });
 };
+
+// for (let k = 0; k < todos.array.length; k += 1) {
+//   const des = document.querySelectorAll('.task');
+//   des[k].addEventListener('keydown', (event) => {
+//     if (event.keyCode === 13) {
+//       event.preventDefault();
+//     }
+//   });
+//   des[k].addEventListener('input', () => {
+//     todos.editText(k, des[k].innerHTML);
+//   });
+// }
 
 const element = document.getElementById('entrada');
 
