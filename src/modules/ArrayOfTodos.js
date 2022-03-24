@@ -32,4 +32,17 @@ export default class ArrayOfTodos {
     this.array[index].description = content;
     this.lStorage();
   }
+
+  checked = (index, bool) => {
+    this.array[index].checkbox = bool;
+    this.lStorage();
+  }
+
+  clean = () => {
+    this.array = this.array.filter((todo) => todo.checkbox === false);
+    for (let i = 0; i < this.array.length; i += 1) {
+      this.array[i].index = i + 1;
+    }
+    this.lStorage();
+  }
 }
