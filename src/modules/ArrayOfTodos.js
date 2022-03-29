@@ -8,6 +8,12 @@ export default class ArrayOfTodos {
     localStorage.setItem('todo', convertToLocalStorage);
   }
 
+  organizeIndex = () => {
+    for (let i = 0; i < this.array.length; i += 1) {
+      this.array[i].index = i + 1;
+    }
+  }
+
   addTodos = (checkbox, description, index) => {
     const newTodo = {
       checkbox,
@@ -22,9 +28,7 @@ export default class ArrayOfTodos {
   removeTodos = (checkbox, description, index) => {
     this.array = this.array.filter((todo) => todo.checkbox !== checkbox
     || todo.description !== description || todo.index !== index);
-    for (let i = 0; i < this.array.length; i += 1) {
-      this.array[i].index = i + 1;
-    }
+    this.organizeIndex();
     this.lStorage();
   }
 
@@ -40,9 +44,7 @@ export default class ArrayOfTodos {
 
   clean = () => {
     this.array = this.array.filter((todo) => todo.checkbox === false);
-    for (let i = 0; i < this.array.length; i += 1) {
-      this.array[i].index = i + 1;
-    }
+    this.organizeIndex();
     this.lStorage();
   }
 }

@@ -1,5 +1,4 @@
 import ArrayOfTodos from './ArrayOfTodos.js';
-import notDuplicate from './notDuplicate.js';
 
 const objectContainer = document.getElementById('object');
 const todos = new ArrayOfTodos();
@@ -10,7 +9,7 @@ if (localStorage.todo) {
 }
 
 const display = () => {
-  notDuplicate();
+  objectContainer.innerHTML = '';
   todos.array.forEach((object, index) => {
     const list = document.createElement('section');
     const div2 = document.createElement('div');
